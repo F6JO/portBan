@@ -1,0 +1,19 @@
+webport: 9929
+init: iptables -F
+rules:
+  - port: 50050
+    prompt: cs连接端口
+    path: csqiaomen
+
+  - port: 4443
+    prompt: viper端口
+
+  - port: 6666
+    prompt: cs监听器端口
+    release:
+      - 167.179.114.3
+
+# port    需要敲门访问的端口                   必须
+# prompt  备注，用来显示                    必须
+# path    可以指定敲门的路径，如不指定则随机uuid 可选
+# release 默认的白名单ip                    可选
